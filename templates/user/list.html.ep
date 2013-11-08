@@ -1,0 +1,38 @@
+% layout 'administration';
+
+% content_for 'page_title' => begin
+<h1>User List <small>list of website users</small></h1>
+% end
+
+<div>
+    <a href="<%= url_for '/user/create' %>" class="btn btn-danger btn-xs"><i class="icon-plus"></i>&nbsp;New User</a>
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:200px">Action</th>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Is Admin</th>
+            <th>Created</th>
+        </tr>
+    </thead>    
+    <tbody>
+% if ($list){
+%     for my $item (@$list){
+        <tr>
+            <td>
+                <a href="<%= url_for '/user/view/'. $item->column('id') %>" title="view user infor" class="btn btn-default"><i class="icon-link"></i></a>&nbsp;
+                <a href="<%= url_for '/user/edit/'. $item->column('id') %>" title="edit user" class="btn btn-default"><i class="icon-edit"></i></a>&nbsp;
+                <a href="<%= url_for '/user/remove/'. $item->column('id') %>" title="remove user" class="btn btn-default"><i class="icon-remove"></i></a>&nbsp;
+            </td>
+            <td><%= $item->column('name') %></td>
+            <td><%= $item->column('email') %></td>
+            <td>Yes</td>
+            <td><%= $item->column('created') %></td>
+        </tr>
+%     }
+% }
+    </tbody>
+</table>

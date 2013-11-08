@@ -1,0 +1,23 @@
+% layout 'administration';
+
+% content_for 'page_title' => begin
+<h1>User Form <small>create or edit an user</small></h1>
+% end
+
+<div>
+    <a href="<%= url_for '/user/list' %>" class="btn btn-danger btn-xs"><i class="icon-list"></i>&nbsp;User List</a>
+</div>
+<br />
+<form method="post">
+    <label>Name</label>
+    <input type="text" name="name" class="form-control" value="<%= $model? $model->column('name'): '' %>" />
+    <label>E-mail</label>
+    <input type="text" name="email" class="form-control" value="<%= $model? $model->column('email'): '' %>" />
+    <label>Password</label>
+    <input type="text" name="password" class="form-control" value="<%= $model? $model->column('password'): '' %>" />
+    <label>About</label>
+    <textarea name="about" class="form-control"><%= $model? $model->column('about') : '' %></textarea>
+    <button type="submit" class="btn btn-danger"><i class="icon-save"></i>&nbsp;Save</button>
+    <a href="<%= url_for '/user/list' %>" class="btn btn-default"><i class="icon-remove"></i>&nbsp;Cancel</a>
+    <div class="<%= $message->{class} || '' %>"><%= $message->{text} || '' %></div>
+</form>

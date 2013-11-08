@@ -1,0 +1,39 @@
+% layout 'administration';
+
+% content_for 'page_title' => begin
+<h1>Entry List <small>list of all pages</small></h1>
+% end
+
+<div>
+    <a href="<%= url_for '/entry/create' %>" class="btn btn-danger btn-xs"><i class="icon-plus"></i>&nbsp;New Entry</a>
+</div>
+<br />
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:200px">Action</th>
+            <th>Name</th>
+            <th>Slug</th>
+            <th>Is Home</th>
+            <th>Created</th>
+        </tr>
+    </thead>
+    <tbody>
+% if ($list){
+%     for my $item (@$list){
+        <tr>
+            <td>
+                <a href="<%= url_for '/page/'. $item->column('slug') %>" target="_blank" title="view page" class="btn btn-default"><i class="icon-link"></i></a>&nbsp;
+                <a href="<%= url_for '/entry/edit/'. $item->column('id') %>" title="edit entry" class="btn btn-default"><i class="icon-edit"></i></a>&nbsp;
+                <a href="<%= url_for '/entry/remove/'. $item->column('id') %>" title="remove entry" class="btn btn-default"><i class="icon-remove"></i></a>&nbsp;
+            </td>
+            <td><%= $item->column('title') %></td>
+            <td><%= $item->column('slug') %></td>
+            <td>No</td>
+            <td><%= $item->column('created') %></td>
+        </tr>
+%     }
+% }
+    </tbody>
+</table>

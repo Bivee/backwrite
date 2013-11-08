@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>Bivee BackWrite CMS</title>
+
+    <link href="<%= url_for '/css/font-awesome.css' %>" rel="stylesheet">
+    <link href="<%= url_for '/css/bootstrap.css' %>" rel="stylesheet" type="text/css" />
+
+    <script src="<%= url_for '/js/jquery-1.9.1.min.js' %>"></script>
+    <script src="<%= url_for '/js/bootstrap.js' %>"></script>
+</head>
+<body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<%= url_for '/profile' %>" style="background-image:url(<%= url_for '/img/logo.png' %>);background-position:center left;background-repeat:no-repeat;padding-left:35px;"><!-- img src="/img/logo.png" height="21px" / -->&nbsp;Bivee BackWrite CMS</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="<%= url_for '/profile' %>"><i class="icon-user"></i>&nbsp;User Profile</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;">&nbsp;</div>
+
+    <div class="container" style="margin-top:20px;">
+        <div class="page-header">
+            <%= content_for 'page_title' %>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="<%= url_for '/website' %>" class="list-group-item"><i class="icon-home"></i>&nbsp;Website</a>
+                    <a href="<%= url_for '/entry/list' %>" class="list-group-item"><i class="icon-globe"></i>&nbsp;Entries Management</a>
+                    <a href="<%= url_for '/user/list' %>" class="list-group-item"><i class="icon-user"></i>&nbsp;User Management</a>
+                    <a href="<%= url_for '/file/list' %>" class="list-group-item"><i class="icon-hdd"></i>&nbsp;File Browser</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <%= content %> 
+            </div>
+        </div>
+    </div>
+
+  
+  <div class="container" style="margin-top:20px;">
+    <p class="text-center"><img src="/img/logo_small.png"><br />
+      <small class="muted">Desenvolvido pela empresa <a href="#">Bivee</a></small></p>
+  </div>
+  
+</body>
+</html>

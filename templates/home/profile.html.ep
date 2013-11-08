@@ -1,0 +1,38 @@
+% layout 'administration';
+
+% content_for 'page_title' => begin
+<h1>Website Dashboard <small>backwrite manage screen for your website</small></h1>
+% end
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="thumbnail">
+            <h1 class="text-center"><i class="icon-user icon-2x"></i></h1>
+            <div class="caption">
+                <h4>User Management</h4>
+                <p>
+                    <a href="<%= url_for '/user/create' %>" class="btn btn-danger btn-xs" role="button">Create</a>&nbsp;
+                    <a href="<%= url_for '/user/list' %>" class="btn btn-danger btn-xs" role="button">List All</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="thumbnail">
+            <h1 class="text-center"><i class="icon-list icon-2x"></i></h1>
+            <div class="caption">
+                <h4>Entry Management</h4>
+                <p>
+                    <a href="<%= url_for '/entry/create' %>" class="btn btn-danger btn-xs" role="button">Create</a>&nbsp;
+                    <a href="<%= url_for '/entry/list' %>" class="btn btn-danger btn-xs" role="button">List All</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- div>
+    <a href="<%= url_for '/user' %>" class="btn btn-danger"><i class="icon-user icon-3x"></i><br />User Management</a>&nbsp;
+    <a href="<%= url_for '/entry' %>" class="btn btn-danger"><i class="icon-list icon-3x"></i><br />Entry Management</a>&nbsp;
+</div -->
+

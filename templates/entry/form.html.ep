@@ -1,0 +1,25 @@
+% layout 'administration';
+
+% content_for 'page_title' => begin
+<h1>Entry Form <small>create or edit and page</small></h1>
+% end
+
+<div>
+    <a href="<%= url_for '/entry/list' %>" class="btn btn-danger btn-xs"><i class="icon-list"></i>&nbsp;Entry List</a>
+</div>
+<br />
+<form method="post">
+    <label>Title</label>
+    <input type="text" name="title" class="form-control" value="<%= $model? $model->column('title'): '' %>" />
+    <label>Subtitle</label>
+    <input type="text" name="subtitle" class="form-control" value="<%= $model? $model->column('subtitle'): '' %>" />
+    <label>Slug</label>
+    <input type="text" name="slug" class="form-control" value="<%= $model? $model->column('slug'): '' %>" />
+    <label>Description</label>
+    <input type="Description" name="description" class="form-control" value="<%= $model? $model->column('description'): '' %>" />
+    <label>Content</label>
+    <textarea name="content" class="form-control"><%= $model? $model->column('content') : '' %></textarea>
+    <button type="submit" class="btn btn-danger"><i class="icon-save"></i>&nbsp;Save</button>
+    <a href="<%= url_for '/entry/list' %>" class="btn btn-default"><i class="icon-remove"></i>&nbsp;Cancel</a>
+    <div class="<%= $message->{class} || '' %>"><%= $message->{text} || '' %></div>
+</form>

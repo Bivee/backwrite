@@ -1,0 +1,70 @@
+=pod
+
+
+=head1 Bivee BackWrite CMS
+
+This is a simple and lightweight web content management system built using Perl 5 and Mojolicious Web Framework.
+
+It's is designed to be easy to use and very light!
+
+
+=head3 Who can use it?
+
+Anyone can download a copy of this software, install on server and use!
+
+
+=head3 What do I need to take to install then?
+
+=over
+
+=item Perl 5.10 
+
+=item Mojolicious 4  (and some plugins)
+
+=item ObjectDB ORM
+
+=item SQLite driver for DBI
+
+(or DBD driver for your favorite database ;] ) 
+
+=back
+
+
+=head3 How can I test/run?
+
+You can use L<morbo> that is a development perl server for mojolicious to run L<BackWrite> on your machine:
+
+    $ morbo backwrite/index.pl
+
+
+=head3 How to deploy?
+
+Is very recomended to use a fastcgi, psgi or other fast protocol as than 
+tradictional CGI, but you can use CGI too (for your own risk).
+
+I really recomend to use L<hipnotoad> with or without nginx for 
+production.
+
+
+=head3 Caveats
+
+This software is under development, then... do not use in production!
+
+
+=head3 Authors
+
+Daniel Vinciguerra <daniel.vinciguerra@bivee.com.br>
+
+2013 (c) Bivee
+
+L<http://bivee.com.br>
+
+
+=head3 Copyright and License
+
+This software is copyright (c) 2013 by Bivee.
+
+This is a free software; you can redistribute it and/or modify it under the same terms of Perl 5 programming 
+languagem system itself.
+
+=cut
